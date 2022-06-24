@@ -21,7 +21,7 @@ const projects = () => {
         <spotLight position={[10, 10, 10]} />
   
         <Stars />
-        {/* <OrbitControls /> */}
+        <OrbitControls />
         <Suspense fallback={null}>
           {projectObjs.map((project, index) =>  {
             return (

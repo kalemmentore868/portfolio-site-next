@@ -3,7 +3,7 @@ import { useLoader, useFrame } from "@react-three/fiber";
 import { TextureLoader } from "three";
 import * as THREE from "three";
 import { Sphere, Html } from "@react-three/drei";
-import ProjectCard from "../Projects/ProjectCard";
+import ProjectCard2 from "../Projects/ProjectCard2";
 
 const Planet = ({  projectObj, key }) => {
 
@@ -21,14 +21,16 @@ const Planet = ({  projectObj, key }) => {
   return (
     
     <Sphere ref={mesh} scale={hovered ? 6 : 3} position={projectObj.position} onPointerOver={(event) => hover(true)}
-    onPointerOut={(event) => hover(false)}>
+    onPointerOut={(event) => hover(false)}
+    //onClick={() => }
+    >
       <meshStandardMaterial
         map={planetTexture}
         attach="material"
         color="white"
       />
-       <Html>
-          <ProjectCard projectObj={projectObj} key={key}/>
+       <Html style={clicked ? {display: "block"} : {display: "none"}}>
+          <ProjectCard2 projectObj={projectObj} key={key}/>
         </Html>
     </Sphere>
     
