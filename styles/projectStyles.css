@@ -9,7 +9,8 @@
     border-radius: 10px;
   box-shadow: 3px 3px 20px rgba(80, 78, 78, 0.5);
   text-align: center;
-  width: 400px;
+  width: 300px;
+  padding-bottom: 10px;
 }
 
 .title-content{
@@ -23,7 +24,7 @@
   letter-spacing: 2px;
   color: #9cc9e3;
   padding: .5rem 0;
-  font-size: 3em;
+  font-size: s3em;
 }
 
 .divider{
@@ -36,7 +37,7 @@
 
 .card-info{
     width: 100%;
-    padding: 0 50px;
+    padding: 0 30px;
     color: #e4e6e7;
     font-style: 2rem;
     line-height: 24px;
@@ -52,7 +53,7 @@
 .tag-list{
     display: flex;
 justify-content: space-around;
-padding: 2rem;
+padding: 1rem 2rem;
 }
 
 .tag{
@@ -65,13 +66,13 @@ font-size: 1.5rem;
   padding: 0;
   display: flex;
   justify-content: space-around;
-  margin: 2.5rem 0;
+  margin: 1.5rem 0;
 }
 
 .external-link{
     color:#d4c0c0;
 font-size: 1.6rem;
-padding:1rem 1.5rem;
+padding: .8rem 1.5rem;
 background: #6b3030;
 border-radius: 15px;
 transition: 0.5s;
@@ -79,4 +80,20 @@ transition: 0.5s;
 
 .external-link:hover{
     background: #801414;
+}
+
+@media (max-width: 820px){
+  .blogCard{
+  width: 200px;
+  transform: translate(-40px);
+ 
+}
+}
+
+@media (max-width: 500px){
+  .blogCard{
+  width: 200px;
+  transform: translate(100px, -100px);
+ 
+}
 }

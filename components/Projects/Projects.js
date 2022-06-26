@@ -1,53 +1,51 @@
-import React from "react";
+import React, { useState, Suspense } from "react";
+import { Canvas } from "@react-three/fiber";
+import styled from "styled-components";
+import { Stars } from "@react-three/drei";
+import Planet from "../ThreeDObjects/Planet";
+import { projectObjs } from "../../constants/constants copy";
+
 
 import {
-  GridContainer,
-} from "./ProjectsStyles";
-import {
-  Section,
+  
   SectionDivider,
   SectionTitle,
 } from "../../styles/GlobalComponents";
-import { projects } from "../../constants/constants";
-import ProjectCard from "./ProjectCard";
 
-const Projects = () => (
-  <Section nopadding id="projects">
-    <SectionDivider />
+const Wrapper = styled.div`
+  position: relative;
+  canvas {
+    height: 180vh;
+  }
+`;
+
+const Projects = () => {
+
+  return (
+    
+
+    <Wrapper>
+          <SectionDivider />
     <SectionTitle main>Projects</SectionTitle>
-    <GridContainer>
-      {projects.map((p, i) => {
-        return (
-          // <BlogCard key={i}>
-          //   <Img src={p.image} />
-          //   <TitleContent>
-          //     <HeaderThree title>{p.title}</HeaderThree>
-          //     <Hr />
-          //   </TitleContent>
-          //   <CardInfo className="card-info">{p.description}</CardInfo>
-          //   <div>
-          //     <br />
-          //     <TitleContent>Stack</TitleContent>
-          //     <TagList>
-          //       {p.tags.map((t, i) => {
-          //         return <Tag key={i}>{t}</Tag>;
-          //       })}
-          //     </TagList>
-          //   </div>
-          //   <UtilityList>
-          //     <ExternalLinks target="_blank" href={p.visit}>
-          //       Code
-          //     </ExternalLinks>
-          //     <ExternalLinks target="_blank" href={p.source}>
-          //       Source
-          //     </ExternalLinks>
-          //   </UtilityList>
-          // </BlogCard>
-          <ProjectCard projectObj={p} key={i}/>
-        );
-      })}
-    </GridContainer>
-  </Section>
-);
+      <Canvas camera={{ fov: 35, near: 0.6, zoom:.8, far: 1000, position: [0, 0, 100] }}>
+        <ambientLight intensity={0.5} />
+        <spotLight position={[10, 10, 10]} />
+  
+        <Stars />
+        <Suspense fallback={null}>
+          {projectObjs.map((projObj, index) =>  {
+            return (
+              
+              <Planet key={index} projectObj={projObj}/>
+             
+              
+            )
+          })}
+        </Suspense>
+      </Canvas>
+    </Wrapper>
+    
+  );
+};
 
 export default Projects;

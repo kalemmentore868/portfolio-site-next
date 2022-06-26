@@ -15,9 +15,9 @@ import {
   } from "./ProjectsStyles";
 
 
-const ProjectCard = ({projectObj, key}) => {
+const ProjectCard = ({projectObj}) => {
   return (
-    <BlogCard key={key}>
+    <BlogCard>
     <Img src={projectObj.image} />
     <TitleContent>
       <HeaderThree title>{projectObj.title}</HeaderThree>
