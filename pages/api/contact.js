@@ -11,7 +11,7 @@ const schema = Joi.object().keys({
 
 
 
-export default async (req, res) => {
+  const handler = async (req, res) => {
 
   const { error, value } = schema.validate(req.body);
 
@@ -20,15 +20,15 @@ export default async (req, res) => {
     res.send(error.message)
   } else{
     const {firstname, lastname, email, message, phone} = req.body;
-    console.log(process.env.pleasework)
+  
   
     let transporter = nodemailer.createTransport({
       host: "smtp.gmail.com",
       port: 465,
       secure: true, // true for 465, false for other ports
       auth: {
-        user: "kalemmalek123@gmail.com", // generated ethereal user
-        pass: "hfvbjduglzilxozy", // generated ethereal password
+        user: process.env.email, // generated ethereal user
+        pass: process.env.password, // generated ethereal password
       },
     });
   
@@ -56,3 +56,5 @@ export default async (req, res) => {
 
  
 }
+
+export default handler

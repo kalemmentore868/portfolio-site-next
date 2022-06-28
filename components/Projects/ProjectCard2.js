@@ -1,24 +1,12 @@
 import React from 'react'
+import Image from 'next/image';
 
-import {
-    BlogCard,
-    CardInfo,
-    ExternalLinks,
-    GridContainer,
-    HeaderThree,
-    Hr,
-    Tag,
-    TagList,
-    TitleContent,
-    UtilityList,
-    Img,
-  } from "./ProjectsStyles";
 
 
 const ProjectCard2 = ({projectObj, key}) => {
   return (
     <div className="blogCard" key={key}>
-     <img className='card-img' src={projectObj.image} />
+     <Image className='card-img' src={projectObj.image} alt="project information"/>
    <div className="title-content">
       <h3 className="header-three">{projectObj.title}</h3>
       <hr className="divider" />
@@ -34,10 +22,10 @@ const ProjectCard2 = ({projectObj, key}) => {
       </ul>
     </div>
    <ul className="utility-list">
-      <a className="external-link" target="_blank" href={projectObj.visit}>
+      <a className="external-link" target="_blank" rel="noreferrer" href={projectObj.visit}>
         Code
       </a>
-      <a className="external-link" target="_blank" href={projectObj.source}>
+      <a className="external-link" target="_blank" rel="noreferrer" href={projectObj.source}>
         Source
       </a>
     </ul> 
