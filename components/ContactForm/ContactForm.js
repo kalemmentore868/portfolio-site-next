@@ -55,7 +55,7 @@ const ContactForm = () => {
             <label htmlFor="firstName">First Name</label>
             <Input {...register("firstname", {
             required: "first name is required**",
-          })} type="text" id="firstname" name="firstname" />
+          })} type="text" id="firstname" name="firstname" error={errors.firstname} />
           <Status>{errors.firstname?.message}</Status>
           </FormBox>
 
@@ -63,7 +63,7 @@ const ContactForm = () => {
             <label htmlFor="lastName">Last Name</label>
             <Input {...register("lastname", {
             required: "last name is required**",
-          })} type="text" id="lastname" name="lastname"  />
+          })} type="text" id="lastname" name="lastname" error={errors.lastname}  />
            <Status>{errors.lastname?.message}</Status>
           </FormBox>
 
@@ -71,7 +71,11 @@ const ContactForm = () => {
             <label htmlFor="email">Email</label>
             <Input {...register("email", {
             required: "email is required**",
-          })} type="email" id="email" name="email" />
+            pattern: {
+              value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+              message: "invalid email address**"
+            }
+          })} type="email" id="email" name="email" error={errors.email} />
 
         <Status>{errors.email?.message}</Status>
           </FormBox>
@@ -89,11 +93,16 @@ const ContactForm = () => {
               id="message"
               name="message"
               cols="30"
-              rows="10"
+              rows="6"
               placeholder="Please leave a message"
               {...register("message", {
                 required: "message is required**",
+                maxLength: {
+                  value: 700,
+                  message: "message must not exceed 700 characters**"
+                }
               })}
+              error={errors.message}
             />
           <Status>{errors.message?.message}</Status>
           </FormBox>

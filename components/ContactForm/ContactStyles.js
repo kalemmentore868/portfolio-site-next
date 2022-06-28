@@ -10,7 +10,6 @@ export const Container = styled.div`
   border-radius: 8px;
   margin-bottom: 20px;
 
-  /* min-height: 80vh; */
 `;
 export const FormBox = styled.div`
   width: 100%;
@@ -23,16 +22,28 @@ export const Input = styled.input`
   width: 100%;
   padding: 5px;
   font-size: 18px;
-  border: 1px solid rgba(128, 128, 128, 0.199);
+  border: ${(props) => props.error ? '3px solid #d9534f' : '2px solid #292b2c'};
   margin-top: 5px;
+  border-radius: 10px;
+
+  &:focus{
+   border: 3px solid #0275d8;
+   outline:none;
+  }
 `;
 
 export const Textarea = styled.textarea`
   width: 100%;
   padding: 5px;
   font-size: 18px;
-  border: 1px solid rgba(128, 128, 128, 0.199);
+   border: ${(props) => props.error ? '3px solid #d9534f' : '2px solid #292b2c'};
   margin-top: 5px;
+  border-radius: 10px;
+
+  &:focus{
+   border: 3px solid #0275d8;
+   outline:none;
+  }
 `;
 export const Button = styled.button`
   width: 100%;
@@ -46,7 +57,7 @@ export const Button = styled.button`
   cursor: pointer;
   margin-top: 10px;
   transition: 0.3s ease background-color;
-  background-color: #22d3ee;
+  background-color: #0275d8;
 
   &:hover {
     background-color: #0891b2;
@@ -54,6 +65,6 @@ export const Button = styled.button`
 `;
 
 export const Status = styled.span`
-  color: #dc2626;
+  color: #d9534f;
   font-size: 15px;
 `
