@@ -46,8 +46,14 @@ export const Button = styled.button`
   cursor: pointer;
   margin-top: 10px;
   transition: 0.3s ease background-color;
+  background-color: #22d3ee;
 
   &:hover {
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: #0891b2;
   }
 `;
+
+export const Status = styled.span`
+  color: #dc2626;
+  font-size: 15px;
+`

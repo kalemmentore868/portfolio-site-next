@@ -93,7 +93,7 @@ transition: 0.5s;
 @media (max-width: 500px){
   .blogCard{
   width: 200px;
-  transform: translate(100px, -100px);
+  transform: translate(80px, -100px);
  
 }
 }

@@ -19,9 +19,19 @@ const Planet = ({  projectObj }) => {
 
   console.log(viewport.width)
   let responsivePosition = [viewport.width * projectObj.position[0], projectObj.position[1], projectObj.position[2] ]
-  
+  let scale = 3;
+
   if(viewport.width <= 30){
     responsivePosition[0] = -0.3 * viewport.width
+    scale = 1.7
+  }
+
+  if(viewport.width <= 30 && projectObj.id === 5){
+    responsivePosition[1] = -12
+  }
+
+  if(viewport.width <= 30 && projectObj.id === 4){
+    responsivePosition[1] = -18
   }
 
   const planetTexture = useLoader(TextureLoader, projectObj.image);
@@ -33,7 +43,7 @@ const Planet = ({  projectObj }) => {
 
   return (
     
-    <Sphere ref={mesh} scale={hovered || clicked ? 6 : 3} position={responsivePosition} onPointerOver={(event) => hover(true)}
+    <Sphere ref={mesh} scale={hovered || clicked ? scale*2 : scale} position={responsivePosition} onPointerOver={(event) => hover(true)}
     onPointerOut={(event) => hover(false)}
     onClick={(event) => click(!clicked) }
     >

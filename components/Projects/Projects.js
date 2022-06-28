@@ -1,9 +1,10 @@
-import React, { useState, Suspense } from "react";
-import { Canvas } from "@react-three/fiber";
+import React, {  Suspense } from "react";
+import { Canvas} from "@react-three/fiber";
 import styled from "styled-components";
 import { Stars } from "@react-three/drei";
 import Planet from "../ThreeDObjects/Planet";
 import { projectObjs } from "../../constants/constants copy";
+import Model from "../ThreeDObjects/Text-for-proj";
 
 
 import {
@@ -24,7 +25,7 @@ const Projects = () => {
   return (
     
 
-    <Wrapper>
+    <Wrapper id="projects">
           <SectionDivider />
     <SectionTitle main>Projects</SectionTitle>
       <Canvas camera={{ fov: 35, near: 0.6, zoom:.8, far: 1000, position: [0, 0, 100] }}>
@@ -34,14 +35,17 @@ const Projects = () => {
         <Stars />
         <Suspense fallback={null}>
           {projectObjs.map((projObj, index) =>  {
+            
             return (
-              
+           
               <Planet key={index} projectObj={projObj}/>
              
               
             )
           })}
+          <Model />
         </Suspense>
+      
       </Canvas>
     </Wrapper>
     

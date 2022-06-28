@@ -1,9 +1,10 @@
 import React from "react";
+import { useForm } from "react-hook-form";
+import axios from "axios"
 
 import {
   Section,
   SectionTitle,
-  SectionText,
 } from "../../styles/GlobalComponents";
 import {
   Container,
@@ -15,87 +16,95 @@ import {
 } from "./ContactStyles";
 
 const ContactForm = () => {
-  // const [state, handleSubmit] = useForm("mayvedag");
-  // if (state.succeeded) {
-  //   return (
-  //     <Section style={{ margin: "30px 0" }}>
-  //       <SectionTitle style={{ margin: "0 auto 30px auto" }}>
-  //         Thanks For Submitting!
-  //       </SectionTitle>
 
-  //       <SectionText style={{ margin: "0 auto 30px auto" }}>
-  //         Look out for an email response from me within the next 72 hours.
-  //       </SectionText>
-  //     </Section>
-  //   );
-  // }
+
+  const {register, handleSubmit, formState: { errors }, reset} = useForm()
+  async function onSubmitForm(values){
+    let config = {
+      method: "post",
+      url: `/api/contact`,
+      headers:{
+        'Content-Type': 'application/json'
+      },
+      data: values
+    }
+
+    try {
+      const response = await axios(config);
+      if(response.status == 200){
+        reset()
+      }
+    } catch (err) {
+      console.error(err)
+    }
+    
+  }
 
   return (
-    // <Section id="contact">
-    //   <SectionTitle style={{ margin: "0 auto 30px auto" }}>
-    //     Leave Me a Message!
-    //   </SectionTitle>
-    //   <Container>
-    //     <form
-    //       action="https://formspree.io/f/mayvedag"
-    //       method="POST"
-    //       onSubmit={handleSubmit}
-    //     >
-    //       <FormBox>
-    //         <label for="firstName">First Name</label>
-    //         <Input type="text" id="firstname" name="firstname" required />
-    //         <ValidationError
-    //           prefix="First-Name"
-    //           field="firstName"
-    //           errors={state.errors}
-    //         />
-    //       </FormBox>
+    <Section id="contact">
+      <SectionTitle style={{ margin: "0 auto 30px auto" }}>
+        Leave Me a Message!
+      </SectionTitle>
+      <Container>
+        <form
+          action=""
+          method="POST"
+          onSubmit={handleSubmit(onSubmitForm)}
+        >
+          <FormBox>
+            <label htmlFor="firstName">First Name</label>
+            <Input {...register("firstname", {
+            required: "first name is required**",
+          })} type="text" id="firstname" name="firstname" />
+          <Status>{errors.firstname?.message}</Status>
+          </FormBox>
 
-    //       <FormBox>
-    //         <label for="lastName">Last Name</label>
-    //         <Input type="text" id="lastname" name="firstname" required />
-    //         <ValidationError
-    //           prefix="Last-Name"
-    //           field="lastname"
-    //           errors={state.errors}
-    //         />
-    //       </FormBox>
+          <FormBox>
+            <label htmlFor="lastName">Last Name</label>
+            <Input {...register("lastname", {
+            required: "last name is required**",
+          })} type="text" id="lastname" name="lastname"  />
+           <Status>{errors.lastname?.message}</Status>
+          </FormBox>
 
-    //       <FormBox>
-    //         <label for="email">Email</label>
-    //         <Input type="email" id="email" name="email" required />
+          <FormBox>
+            <label htmlFor="email">Email</label>
+            <Input {...register("email", {
+            required: "email is required**",
+          })} type="email" id="email" name="email" />
 
-    //         <ValidationError
-    //           prefix="Email"
-    //           field="email"
-    //           errors={state.errors}
-    //         />
-    //       </FormBox>
+        <Status>{errors.email?.message}</Status>
+          </FormBox>
 
-    //       <FormBox>
-    //         <label for="message">Message</label>
-    //         <Textarea
-    //           id="message"
-    //           name="message"
-    //           cols="30"
-    //           required
-    //           rows="10"
-    //           placeholder="Please leave a message"
-    //         />
-    //         <ValidationError
-    //           prefix="Message"
-    //           field="Message"
-    //           errors={state.errors}
-    //         />
-    //       </FormBox>
+          <FormBox>
+            <label htmlFor="phone">Phone</label>
+            <Input {...register("phone", {
+            required: false,
+          })} type="text" id="phone" name="phone" />
+          </FormBox>
 
-    //       <Button type="submit" disabled={state.submitting}>
-    //         Submit
-    //       </Button>
-    //     </form>
-    //   </Container>
-    // </Section>
-    <h1>YEA</h1>
+          <FormBox>
+            <label htmlFor="message">Message</label>
+            <Textarea
+              id="message"
+              name="message"
+              cols="30"
+              rows="10"
+              placeholder="Please leave a message"
+              {...register("message", {
+                required: "message is required**",
+              })}
+            />
+          <Status>{errors.message?.message}</Status>
+          </FormBox>
+
+          <Button type="submit" >
+            Submit
+          </Button>
+        </form>
+      </Container>
+    </Section>
+   
   );
 };
 
