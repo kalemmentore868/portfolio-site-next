@@ -67,7 +67,7 @@ const Timeline = () => {
     <Section id="about">
       <SectionTitle>About Me</SectionTitle>
       <SectionText>
-        I am a driven, focussed Web developer who strives for perfection in each
+        I am a driven, focused Web developer who strives for perfection in each
         and every project. I am committed to satisfying the needs of my clients.
         All services come with free consultations.
       </SectionText>
