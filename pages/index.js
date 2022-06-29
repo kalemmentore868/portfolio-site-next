@@ -9,9 +9,16 @@ import Timeline from "../components/TimeLine/TimeLine";
 import WaterRippleAnimation from "../components/WaterRippleAnimation/WaterRippleAnimation";
 import { Layout } from "../layout/Layout";
 import { Section } from "../styles/GlobalComponents";
+import Head from "next/head";
 
 const Home = () => {
   return (
+    <>
+      <Head>
+        <title>Kalem Mentore</title>
+        <link rel="icon" href="favicon.ico" type="image/x-icon"></link>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
+      </Head>
     <Layout>
       <Section grid>
         <Hero />
@@ -27,6 +34,7 @@ const Home = () => {
       <Acomplishments />
       <ContactForm />
     </Layout>
+    </>
   );
 };
 
