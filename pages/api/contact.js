@@ -27,8 +27,8 @@ const schema = Joi.object().keys({
       port: 465,
       secure: true, // true for 465, false for other ports
       auth: {
-        user: process.env.email, // generated ethereal user
-        pass: process.env.password, // generated ethereal password
+        user: "kalemmalek123@gmail.com", // generated ethereal user
+        pass: "hfvbjduglzilxozy", // generated ethereal password
       },
     });
   
