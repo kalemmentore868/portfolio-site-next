@@ -1,5 +1,5 @@
 import React from "react";
-import { AiFillGithub, AiFillInstagram, AiFillLinkedin } from "react-icons/ai";
+import { AiFillGithub, AiFillTwitterCircle, AiFillLinkedin } from "react-icons/ai";
 
 import { SocialIcons } from "../Header/HeaderStyles";
 import {
@@ -48,9 +48,9 @@ const Footer = () => {
           </SocialIcons>
           <SocialIcons
             target="_blank"
-            href="https://www.instagram.com/blank_868/?hl=en"
+            href="https://twitter.com/KalemMentore"
           >
-            <AiFillInstagram size="3rem" />
+            <AiFillTwitterCircle size="3rem" />
           </SocialIcons>
         </SocialContainer>
       </SocialIconsContainer>

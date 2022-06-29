@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { useForm } from "react-hook-form";
 import axios from "axios"
 
@@ -15,7 +15,11 @@ import {
   Textarea,
 } from "./ContactStyles";
 
+
 const ContactForm = () => {
+  const [hasSubmitted, setSub] = useState(false)
+  
+ 
 
 
   const {register, handleSubmit, formState: { errors }, reset} = useForm()
@@ -29,10 +33,17 @@ const ContactForm = () => {
       data: values
     }
 
+    
+
+    
+   
+
     try {
       const response = await axios(config);
       if(response.status == 200){
+        
         reset()
+        setSub(true)
       }
     } catch (err) {
       console.error(err)
@@ -107,8 +118,8 @@ const ContactForm = () => {
           <Status>{errors.message?.message}</Status>
           </FormBox>
 
-          <Button type="submit" >
-            Submit
+          <Button type="submit" hasSubmitted={hasSubmitted}>
+            {hasSubmitted ? "Thanks for the Submission!" : "Submit"}
           </Button>
         </form>
       </Container>

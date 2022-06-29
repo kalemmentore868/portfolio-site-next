@@ -1,6 +1,6 @@
 import Link from "next/link";
 import React from "react";
-import { AiFillGithub, AiFillInstagram, AiFillLinkedin } from "react-icons/ai";
+import { AiFillGithub, AiFillTwitterCircle, AiFillLinkedin } from "react-icons/ai";
 
 import {
   Container,
@@ -49,9 +49,9 @@ const Header = () => (
       </SocialIcons>
       <SocialIcons
         target="_blank"
-        href="https://www.instagram.com/blank_868/?hl=en"
+        href="https://twitter.com/KalemMentore"
       >
-        <AiFillInstagram size="3rem" />
+        <AiFillTwitterCircle size="3rem" />
       </SocialIcons>
     </Div3>
   </Container>

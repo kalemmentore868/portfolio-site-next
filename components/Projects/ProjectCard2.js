@@ -1,12 +1,12 @@
 import React from 'react'
-import Image from 'next/image';
+
 
 
 
 const ProjectCard2 = ({projectObj, key}) => {
   return (
     <div className="blogCard" key={key}>
-     <Image className='card-img' src={projectObj.image} alt="project information"/>
+     <img className='card-img' src={projectObj.image} alt="project information"/>
    <div className="title-content">
       <h3 className="header-three">{projectObj.title}</h3>
       <hr className="divider" />

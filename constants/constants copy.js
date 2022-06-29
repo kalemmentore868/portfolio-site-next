@@ -70,7 +70,7 @@ export const projectObjs = [
     title: "Alien Invasion Math Game",
     description:
       "An HTML5 cross platform game where users destroy spaceships by answering math questions",
-    image: "/images/alien-space-invasion.PNG",
+    image: "/images/alien-space-invasion.png",
     tags: ["HTML5", "CSS", "JavaScript"],
     source: "https://ubiquitous-semolina-e1b35c.netlify.app/",
     visit: "https://github.com/kalemmentore868/Alien-Space-Invasion",
@@ -81,7 +81,7 @@ export const projectObjs = [
     title: "Demo Digi",
     description:
       "A replica of one of Digicel's older websites made with React",
-    image: "/images/demo-digi.PNG",
+    image: "/images/demo-digi.png",
     tags: ["React", "Javascript"],
     source: "https://magnificent-fairy-56d517.netlify.app/",
     visit: "https://github.com/kalemmentore868/Demo-digi",
@@ -92,7 +92,7 @@ export const projectObjs = [
     title: "BlockSquare",
     description:
       "An HTML5 cross platform game where users tap on squares to occupy space. The player who occupies the most squares wins ",
-    image: "/images/blocksquare.PNG",
+    image: "/images/blocksquare.png",
     tags: ["HTML5", "CSS", "Typescript"],
     source: "https://mellow-faloodeh-ee568b.netlify.app/",
     visit: "https://github.com/kalemmentore868/blocksquare",

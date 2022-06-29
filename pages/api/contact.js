@@ -6,7 +6,7 @@ const schema = Joi.object().keys({
   firstname: Joi.string().trim().required(),
   lastname: Joi.string().trim().required(),
   message: Joi.string().trim().required().max(700),
-  phone: Joi.string()
+  phone: Joi.string().allow(null, '')
 })
 
 

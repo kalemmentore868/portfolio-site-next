@@ -56,12 +56,10 @@ export const Button = styled.button`
   text-align: center;
   cursor: pointer;
   margin-top: 10px;
-  transition: 0.3s ease background-color;
-  background-color: #0275d8;
+  color: white;
+  background-color: ${(props) => props.hasSubmitted ? "#84CC16" : "#0275d8" };
 
-  &:hover {
-    background-color: #0891b2;
-  }
+  
 `;
 
 export const Status = styled.span`
