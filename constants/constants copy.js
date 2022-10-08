@@ -1,4 +1,3 @@
-
 export const projectObjs = [
   {
     title: "Outsource Accounting",
@@ -9,7 +8,7 @@ export const projectObjs = [
     source: "https://boring-torvalds-a4eea2.netlify.app/",
     visit: "https://github.com/kalemmentore868/accounting-site-for-momz",
     id: 0,
-    position: [0,0,0]
+    position: [0, 0, 0],
   },
   {
     title: "Gaming Website",
@@ -20,7 +19,7 @@ export const projectObjs = [
     source: "https://hardcore-noyce-473a2a.netlify.app/",
     visit: "https://github.com/kalemmentore868/Wix-clone-project",
     id: 1,
-    position: [0.18,13,20]
+    position: [0.18, 13, 20],
   },
   {
     title: "Calculator App",
@@ -31,7 +30,7 @@ export const projectObjs = [
     source: "https://stupefied-hamilton-ec2f7d.netlify.app/",
     visit: "https://github.com/kalemmentore868/Calculator-app",
     id: 2,
-    position: [-0.3, 20,20]
+    position: [-0.3, 20, 20],
   },
   {
     title: "Tic Tac Toe app",
@@ -42,7 +41,7 @@ export const projectObjs = [
     source: "https://distracted-swanson-1f879e.netlify.app/",
     visit: "https://github.com/kalemmentore868/Tic-Tac-Toe",
     id: 3,
-    position: [0.2,30,5]
+    position: [0.2, 30, 5],
   },
   {
     title: "Easy Bank Landing Page",
@@ -53,7 +52,7 @@ export const projectObjs = [
     source: "https://objective-heisenberg-e6ee1b.netlify.app/",
     visit: "https://github.com/kalemmentore868/Easy-Bank-Landing-Page",
     id: 4,
-    position: [0.18,10, -10]
+    position: [0.18, 10, -10],
   },
   {
     title: "Home Room Landing Page",
@@ -64,7 +63,7 @@ export const projectObjs = [
     source: "https://objective-snyder-e34ef0.netlify.app/",
     visit: "https://github.com/kalemmentore868/Home-Room-Landing-Page",
     id: 5,
-    position: [-0.17,-6,0]
+    position: [-0.17, -6, 0],
   },
   {
     title: "Alien Invasion Math Game",
@@ -75,18 +74,17 @@ export const projectObjs = [
     source: "https://ubiquitous-semolina-e1b35c.netlify.app/",
     visit: "https://github.com/kalemmentore868/Alien-Space-Invasion",
     id: 6,
-    position: [-0.26,6,6]
+    position: [-0.26, 6, 6],
   },
   {
     title: "Demo Digi",
-    description:
-      "A replica of one of Digicel's older websites made with React",
+    description: "A replica of one of Digicel's older websites made with React",
     image: "/images/demo-digi.png",
     tags: ["React", "Javascript"],
     source: "https://magnificent-fairy-56d517.netlify.app/",
     visit: "https://github.com/kalemmentore868/Demo-digi",
     id: 7,
-    position: [0.26,-6,4]
+    position: [0.26, -6, 4],
   },
   {
     title: "BlockSquare",
@@ -94,9 +92,9 @@ export const projectObjs = [
       "An HTML5 cross platform game where users tap on squares to occupy space. The player who occupies the most squares wins ",
     image: "/images/blocksquare.png",
     tags: ["HTML5", "CSS", "Typescript"],
-    source: "https://mellow-faloodeh-ee568b.netlify.app/",
+    source: "https://bloqsquare.netlify.app/",
     visit: "https://github.com/kalemmentore868/blocksquare",
     id: 7,
-    position: [0,10,4]
+    position: [0, 10, 4],
   },
 ];
